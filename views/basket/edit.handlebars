@@ -4,14 +4,17 @@
 <form action="/basket/update/{{id}}" method="post">
 
 	<div class="m1">
-		<label for="basket_name" class="w-7">Basket name</label>
-		<input type="text" name="basket_name" class="mt-1 p-1" readonly value="basket name" >
+		<label for="basket_name" class="w-7">Basket name:</label>
+		<strong>{{busket.description}}</strong>
 	</div>
 
 	<div class="m1">
 		<label for="qty" class="w-7" >Fruit</label>
 		<select name="fruit_id" class="mt-1 p-1" id="">
 			<option value="">Select fruit type</option>
+			{{#each fruits}}
+			<option value="{{id}}">{{name}}</option>
+			{{/each }}
 		</select>
 	</div>
 

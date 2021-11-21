@@ -33,8 +33,9 @@ module.exports = function(pool) {
 
 	async function listBaskets() {
 		const selectBasketsSQL = `select * from basket`;
-		const result = pool.query(selectBasketsSQL)
-		return result.rows;
+		const result = await pool.query(selectBasketsSQL)
+		const results = result.rows
+		return results;
 	}
 
 	async function getBasket(basketId) {
